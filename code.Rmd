@@ -175,3 +175,60 @@ for (i in 1:10) {
 }
 
 ```
+
+
+
+
+## print "fuzz" for divided by 5 and 3, another word for divisible by 3, and i for the rest 
+
+```{r}
+fizzBuzz <- function(n) {
+  for (i in 1:n)
+    if(i %% 3  == 0 & i %% 5 == 0) {
+      return("FizzBuzz")
+    } else if (i %% 3 ==0) {
+      print("buss")
+    } else if (i %%5 == 0) {
+      print("fizz")
+    } else {
+      print("no")
+    }
+}
+fizzBuzz(15)
+
+```
+
+
+
+
+
+## make a data frame with observations and then find the maximum
+
+```{r}
+## this might all be wrong
+q = data.frame(region = c("north", "south", "west", "west"), salary = c(5,10,15, 20), 
+               employee = c("Mark", "Anthony", "Jared", "Oak"))
+
+colMax <- function(q) sapply(q, max, na.rm = TRUE)
+colMax(q)
+
+create_sale_summary_report <- function(df_data) {
+  col_max_function <- function(q) sapply(q, max, na.rm = TRUE)
+  max_frame <- col_max_function(df_data)
+  return(max_frame)
+}
+create_sale_summary_report(q)
+
+```
+
+
+
+
+## find the average value grouped by each region and pring that
+
+```{r}
+q$salary <- as.numeric(q$salary)
+aggregate(q[, 2], list(q$region), mean)
+
+```
+
