@@ -1,0 +1,22 @@
+### print and return
+
+return will just do the most recent, but print will have all of them
+
+## for i in vec
+
+if you define the vec outside of the loop, then pulling that
+
+vec <- c(1,5,5,5)
+function_half <- function(vec) {
+  for (i in vec) 
+    if(i>2) print("here")
+}
+
+if you define it in...
+
+function_1 <- function(n) {
+  for (i in 1:n){
+  square <- i*i
+  print(square)
+  }
+}

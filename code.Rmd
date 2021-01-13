@@ -1,0 +1,177 @@
+---
+title: "code"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## problem 
+
+```{r}
+print("hello world")
+
+```
+
+
+## problem 
+
+function that prints prints squares of a sequence of numbers
+
+```{r}
+new.function <- function(a) {
+  for(i in 1:a) {
+    b<- i^2
+    print(b)
+  }
+}
+
+new.function(3)
+```
+
+
+
+## function without argument
+
+```{r}
+new.function <- function() {
+  a <- 8
+  for(i in 1:a) {
+    b<- i^2
+    print(b)
+  }
+}
+
+new.function()
+```
+
+
+## calling function with different argument values
+
+```{r}
+new.function <- function(a,b,c) {
+  result <- a+2*b + c
+  print(result)
+}
+
+new.function(1,2,3)
+```
+
+
+
+## for loop
+
+```{r}
+for (i in 1:10) print(i)
+```
+
+
+## lapply the function random_unif to a list of 4 numbers with min =0 and max = 1
+
+```{r}
+x <- 1:4
+lapply(x, runif, min = 0, max = 1)
+```
+
+
+
+## sapply does the same thing but simplifys the results
+
+```{r}
+x <- 1:4
+sapply(x, runif, min = 0, max = 1)
+```
+
+## for loop in a function. for 1-10, print each number
+
+```{r}
+function_compute <- function(x) {
+  for(i in 1:x) {
+    if(i < 10) print(i)
+  }
+}
+function_compute(9)
+
+```
+
+
+
+## for loop in a function. for 1-10, print just one number
+
+```{r}
+function_compute <- function(x) {
+  for(i in 1:x) {
+    if(i < 10) count = i+1
+  }
+  print(count)
+}
+function_compute(9)
+
+```
+
+
+## for loop that populates a data frame
+
+```{r}
+
+iterations = 10
+variables = 2
+
+output = matrix(ncol = variables, nrow = iterations)
+
+for (i in 1:iterations){
+  output[i,] <- runif(2)
+}
+
+output
+
+```
+
+
+
+
+## function that populates a data frame
+
+```{r}
+
+## because runif(#) returns that number inside of the parentehses
+iterations = 2
+variables = 4
+
+output = matrix(ncol = variables, nrow = iterations)
+
+for (i in 1:iterations){
+  output[i,] <- runif(4)
+}
+
+output
+
+```
+
+
+
+## function that puts vectors into a list
+
+```{r}
+mylist <- list()
+
+for (i in 1:9) {
+  for (j in 1:5){
+    vec[j] <- i
+  }
+  mylist[[i]] <- vec
+}
+
+mylist
+```
+
+## print "hello world" n times
+
+```{r}
+
+for (i in 1:10) {
+  print("hello")
+}
+
+```
